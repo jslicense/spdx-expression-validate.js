@@ -1,17 +1,13 @@
 {
-  "name": "spdx",
-  "description": "parse SPDX license expressions",
-  "version": "0.4.1",
+  "name": "spdx-expression-validate",
+  "description": "validate SPDX license expressions",
+  "version": "0.0.0",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com)",
-  "bugs": "https://github.com/kemitchell/spdx.js/issues",
   "dependencies": {
-    "spdx-exceptions": "^1.0.0",
-    "spdx-license-ids": "^1.0.0"
+    "spdx-expression-parse": "^1.0.0"
   },
   "devDependencies": {
-    "jison": "^0.4.15",
-    "jsmd-tape": "^0.1.0",
-    "tape": "^4.0.0"
+    "defence-cli": "^1.0.1"
   },
   "homepage": "https://github.com/kemitchell/spdx.js",
   "keywords": [
@@ -24,12 +20,9 @@
     "package.json",
     "standards"
   ],
-  "license": "MIT",
-  "repository": "kemitchell/spdx.js",
+  "license": "(MIT AND CC-BY-3.0)",
+  "repository": "kemitchell/spdx-expression-validate.js",
   "scripts": {
-    "generate": "node generate-parser.js > parser.generated.js",
-    "prepublish": "npm run generate",
-    "pretest": "npm run generate",
-    "test": "jsmd-tape README.md | node"
+    "test": "defence -i javascript README.md | sed 's!spdx-expression-validate!./!' | node"
   }
 }
