@@ -3,6 +3,9 @@
   "description": "validate SPDX license expressions",
   "version": "1.0.1",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com)",
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "spdx-expression-parse": "^1.0.0"
   },
