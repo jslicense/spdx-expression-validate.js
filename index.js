@@ -1,18 +1,20 @@
 var parse = require('spdx-expression-parse')
 
-var containsRepeatedSpace = /\s{2,}/;
+var containsRepeatedSpace = /\s{2,}/
 
-function spdxExpressionValidate(argument) {
+module.exports = function spdxExpressionValidate (argument) {
   var fatString = (
     argument.trim() !== argument ||
-    containsRepeatedSpace.test(argument) )
+    containsRepeatedSpace.test(argument)
+  )
   if (fatString) {
-    return false }
-  else {
+    return false
+  } else {
     try {
       parse(argument)
-      return true }
-    catch (e) {
-      return false } } }
-
-module.exports = spdxExpressionValidate
+      return true
+    } catch (e) {
+      return false
+    }
+  }
+}

@@ -8,7 +8,8 @@
   },
   "devDependencies": {
     "defence-cli": "^1.0.1",
-    "replace-require-self": "^1.0.0"
+    "replace-require-self": "^1.0.0",
+    "standard": "^8.3.0"
   },
   "homepage": "https://github.com/kemitchell/spdx.js",
   "keywords": [
@@ -24,6 +25,7 @@
   "license": "(MIT AND CC-BY-3.0)",
   "repository": "kemitchell/spdx-expression-validate.js",
   "scripts": {
-    "test": "defence -i javascript README.md | replace-require-self | node"
+    "test": "defence -i javascript README.md | replace-require-self | node",
+    "lint": "standard"
   }
 }
